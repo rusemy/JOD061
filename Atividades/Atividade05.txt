@@ -1,4 +1,4 @@
-1. Criar uma conta na Photon Cloud.
+﻿1. Criar uma conta na Photon Cloud.
 
 a) Abra o navegador e acesse a url www.photonengine.com.
 
@@ -65,7 +65,35 @@ public override void OnDisconnected(Photon.Realtime.DisconnectCause cause) {
 
 j) Execute a cena na Unity. Qual foi o resultado na aba Console?
 
+Conectando ao servidor...
+UnityEngine.Debug:Log(Object, Object)
+PhotonConnection:Start() (at Assets/Scripts/PhotonConnection.cs:14)
+
+
+Conectado!
+UnityEngine.Debug:Log(Object, Object)
+PhotonConnection:OnConnectedToMaster() (at Assets/Scripts/PhotonConnection.cs:27)
+Photon.Realtime.ConnectionCallbacksContainer:OnConnectedToMaster() (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:3728)
+Photon.Realtime.LoadBalancingClient:OnOperationResponse(OperationResponse) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2460)
+ExitGames.Client.Photon.PeerBase:DeserializeMessageAndCallback(StreamBuffer)
+ExitGames.Client.Photon.EnetPeer:DispatchIncomingCommands()
+ExitGames.Client.Photon.PhotonPeer:DispatchIncomingCommands()
+Photon.Pun.PhotonHandler:Dispatch() (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:205)
+Photon.Pun.PhotonHandler:FixedUpdate() (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:139)
+
+
 k) Interrompa a cena na Unity. Qual foi o resultado na aba Console?
+
+Desconectado! DisconnectByClientLogic
+UnityEngine.Debug:Log(Object)
+PhotonConnection:OnDisconnected(DisconnectCause) (at Assets/Scripts/PhotonConnection.cs:31)
+Photon.Realtime.ConnectionCallbacksContainer:OnDisconnected(DisconnectCause) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:3748)
+Photon.Realtime.LoadBalancingClient:OnStatusChanged(StatusCode) (at Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs:2787)
+ExitGames.Client.Photon.EnetPeer:StopConnection()
+ExitGames.Client.Photon.PhotonPeer:StopThread()
+Photon.Realtime.ConnectionHandler:OnDisable() (at Assets/Photon/PhotonRealtime/Code/ConnectionHandler.cs:92)
+Photon.Pun.PhotonHandler:OnDisable() (at Assets/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs:132)
+
 
 
 
@@ -109,6 +137,8 @@ i) No método OnPlayerLeftRoom da classe PhotonConnection faça imprimir a mensa
 j) Gere uma build do jogo com a resolução 640x480 em modo janela (Windowed), sem executar.
 
 k) Execute a cena pelo Unity. Execuute a build pelos menos 5 vezes. Qual foi o resultado?
+
+Travou meu computador na terceira.
 
 l) Pare a execução do jogo.
 
